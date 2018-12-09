@@ -1,4 +1,4 @@
-# crud
+# CRUD
 
-Suplemental package for vue crud admin
-Inspired and based on el-data-table / cruddy
+Suplemental package (laravel backend) for vue crud admin (separate package).
+Inspired and based on FEMessage/el-data-table, cruddy/cruddy

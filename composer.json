@@ -1,0 +1,20 @@
+{
+    "name": "h-collector/crud",
+    "description": "Suplemental package for vue crud admin. Inspired and based on el-data-table / cruddy",
+    "type": "library",
+    "require": {
+        "illuminate/database": "^5.7",
+        "illuminate/support": "^5.7",
+        "illuminate/view": "^5.7",
+        "illuminate/contracts": "^5.7",
+        "illuminate/http": "^5.7",
+        "illuminate/validation": "^5.7",
+        "illuminate/routing": "^5.7"
+    },
+    "authors": [
+        {
+            "name": "h-collector",
+            "email": "githcoll@gmail.com"
+        }
+    ]
+}
