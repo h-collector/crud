@@ -2,7 +2,19 @@
     "name": "h-collector/crud",
     "description": "Suplemental package for vue crud admin. Inspired and based on el-data-table / cruddy",
     "type": "library",
+    "authors": [
+        {
+            "name": "h-collector",
+            "email": "githcoll@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "HC\\Crud\\": "src/"
+        }
+    },
     "require": {
+        "php": ">=7.1.0",
         "illuminate/database": "^5.7",
         "illuminate/support": "^5.7",
         "illuminate/view": "^5.7",
@@ -11,10 +23,6 @@
         "illuminate/validation": "^5.7",
         "illuminate/routing": "^5.7"
     },
-    "authors": [
-        {
-            "name": "h-collector",
-            "email": "githcoll@gmail.com"
-        }
-    ]
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
