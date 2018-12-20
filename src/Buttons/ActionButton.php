@@ -6,12 +6,14 @@ use HC\Crud\JavascriptFunc;
 use Illuminate\Support\Fluent;
 
 /**
- * @method ActionButton params(array $params)     action button request params.
- * @method ActionButton refresh(bool $refresh)    refresh table after response (true by default)
- * @method ActionButton external(bool $external)  open action uri in new window (false by default)
- * @method ActionButton uri(string $uri)          custom uri to action
- * @method ActionButton method(ing $method)       custom http method to action
- * @method ActionButton confirm(string $confirm)  action custom confirm message
+ * @method $this params(array $params)      action button request params.
+ * @method $this refresh(bool $refresh)     refresh table after response (true by default)
+ * @method $this external(bool $external)   open action uri in new window (false by default)
+ * @method $this uri(string $uri)           custom uri to action
+ * @method $this method(ing $method)        custom http method to action
+ * @method $this confirm(string $confirm)   action custom confirm message
+ * @method $this search(bool $search)       append search params to request (false by default)
+ * @method $this selection(bool $selection) append row|selection to request (false by default)
  */
 class ActionButton extends TableButton
 {
@@ -42,11 +44,13 @@ class ActionButton extends TableButton
         $this->disabled   = $disabled;
         $this->attributes = new Fluent;
 
-        $this->attributes['uri']      = $uri;
-        $this->attributes['method']   = $method;
-        $this->attributes['refresh']  = true;
-        $this->attributes['external'] = false;
-        $this->attributes['confirm']  = '';
+        $this->attributes['uri']       = $uri;
+        $this->attributes['method']    = $method;
+        $this->attributes['refresh']   = true;
+        $this->attributes['external']  = null; // false
+        $this->attributes['confirm']   = '';
+        $this->attributes['search']    = null; // false
+        $this->attributes['selection'] = null; // false
     }
 
     /**

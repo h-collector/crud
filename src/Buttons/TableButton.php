@@ -9,11 +9,11 @@ use JsonSerializable;
 use HC\Crud\JavascriptFunc;
 
 /**
- * @method TableButton type(string $type)   button type:  primary / success / warning / danger / info / text
- * @method TableButton plain(bool $plain)   determine whether it's a plain button
- * @method TableButton round(bool $round)   determine whether it's a round button
- * @method TableButton circle(bool $circle) determine whether it's a circle button
- * @method TableButton icon(string $icon)   icon class name.
+ * @method $this type(string $type)   button type:  primary / success / warning / danger / info / text
+ * @method $this plain(bool $plain)   determine whether it's a plain button
+ * @method $this round(bool $round)   determine whether it's a round button
+ * @method $this circle(bool $circle) determine whether it's a circle button
+ * @method $this icon(string $icon)   icon class name.
  */
 class TableButton implements Arrayable, JsonSerializable
 {

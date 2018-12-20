@@ -10,33 +10,33 @@ use InvalidArgumentException;
  * @property string $prop
  * @property string $label
  *
- * @method Column component(string $component)      custom component name
- * @method Column params(array $params)             custom component parameters
- * @method Column type(string $type)                type of column: index/selection/expand/bool/img/link/html
- * @method Column label(string $val)                property of column
- * @method Column columnKey(string $val)            property of column
- * @method Column width(string $val)                property of column
- * @method Column minWidth(string $val)             property of column
- * @method Column fixed(string|bool $val)           property of column: true/left/right
- * @method Column renderHeader(JavascriptFunc $val) property of column  Function (h, { column, $index }
- * @method Column sortable(string|bool $val)        property of column: true/false/custom
- * @method Column sortMethod(JavascriptFunc $val)   property of column: Function(a, b)
- * @method Column sortBy(JavascriptFunc $val)       property of column: Function(row, index /String/Array
- * @method Column sortOrders(array $val)            property of column: ['ascending', 'descending', null]
- * @method Column resizable(bool $val)              property of column
- * @method Column formatter(JavascriptFunc $val)    property of column: not usable
- * @method Column showOverflowTooltip(bool $val)    property of column
- * @method Column align(string $val)                property of column: left/center/right
- * @method Column headerAlign(string $val)          property of column: left/center/right
- * @method Column className(string $val)            property of column
- * @method Column labelClassName(string $val)       property of column
- * @method Column selectable(JavascriptFunc $val)   property of column: Function(row, index
- * @method Column reserveSelection(bool $val)       property of column: selection
- * @method Column filters(array $val)               property of column: Array[{ text, value }]
- * @method Column filterPlacement(string: $val)     property of column: same as Tooltip's placement
- * @method Column filterMultiple(bool $val)         property of column
- * @method Column filterMethod(JavascriptFunc $val) property of column: Function(value, row, column
- * @method Column filteredValue(array $val)         property of column
+ * @method $this component(string $component)      custom component name
+ * @method $this params(array $params)             custom component parameters
+ * @method $this type(string $type)                type of column: index/selection/expand/bool/img/link/html
+ * @method $this label(string $val)                property of column
+ * @method $this columnKey(string $val)            property of column
+ * @method $this width(string $val)                property of column
+ * @method $this minWidth(string $val)             property of column
+ * @method $this fixed(string|bool $val)           property of column: true/left/right
+ * @method $this renderHeader(JavascriptFunc $val) property of column  Function (h, { column, $index }
+ * @method $this sortable(string|bool $val)        property of column: true/false/custom
+ * @method $this sortMethod(JavascriptFunc $val)   property of column: Function(a, b)
+ * @method $this sortBy(JavascriptFunc $val)       property of column: Function(row, index /String/Array
+ * @method $this sortOrders(array $val)            property of column: ['ascending', 'descending', null]
+ * @method $this resizable(bool $val)              property of column
+ * @method $this formatter(JavascriptFunc $val)    property of column: not usable
+ * @method $this showOverflowTooltip(bool $val)    property of column
+ * @method $this align(string $val)                property of column: left/center/right
+ * @method $this headerAlign(string $val)          property of column: left/center/right
+ * @method $this className(string $val)            property of column
+ * @method $this labelClassName(string $val)       property of column
+ * @method $this selectable(JavascriptFunc $val)   property of column: Function(row, index
+ * @method $this reserveSelection(bool $val)       property of column: selection
+ * @method $this filters(array $val)               property of column: Array[{ text, value }]
+ * @method $this filterPlacement(string: $val)     property of column: same as Tooltip's placement
+ * @method $this filterMultiple(bool $val)         property of column
+ * @method $this filterMethod(JavascriptFunc $val) property of column: Function(value, row, column
+ * @method $this filteredValue(array $val)         property of column
  *
  * @see http://element.eleme.io/#/en-US/component/table#table-column-attributes
  */
