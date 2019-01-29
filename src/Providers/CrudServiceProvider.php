@@ -18,6 +18,10 @@ class CrudServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->configureRouter(
+            $this->app['router']
+        );
+
         // laravel
         if (! function_exists('config_path')) {
             return;
@@ -56,25 +60,29 @@ class CrudServiceProvider extends ServiceProvider
             );
         });
 
-        $this->app->afterResolving(RegistrarContract::class, function (Router $router) {
-            $settings = $this->app['config']->get('crud');
-
-            $dashboard = $settings['dashboard'] ?? false;
-
-            $router->group([
-                'as'         => 'crud.',
-                'prefix'     => $settings['uri'] ?? '',
-                'middleware' => $settings['middleware'] ?? [],
-            ], function (Router $router) use ($dashboard) {
-                $this->registerRoutes($router, $dashboard);
-            });
-
-            // dd($router->getRoutes());
-        });
-
         $this->mergeConfigFrom(
             __DIR__ . '/../../config/crud.php', 'crud'
         );
+    }
+
+    /**
+     * @param RegistrarContract $router
+     */
+    public function configureRouter(RegistrarContract $router)
+    {
+        $settings = $this->app['config']->get('crud');
+
+        $dashboard = $settings['dashboard'] ?? false;
+
+        $router->group([
+            'as'         => 'crud.',
+            'prefix'     => $settings['uri'] ?? '',
+            'middleware' => $settings['middleware'] ?? [],
+        ], function (Router $router) use ($dashboard) {
+            $this->registerRoutes($router, $dashboard);
+        });
+
+        // dd($router->getRoutes());
     }
 
     /**
