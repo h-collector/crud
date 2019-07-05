@@ -47,7 +47,7 @@ trait HasCrudMethods
             return $entity->getRepository()->create($attrs);
         } catch (\Exception $e) {
             throw new HttpResponseException(new Response(
-                'Record not created', 500
+                'Record not created: ' . $e->getMessage(), 500
             ));
         }
     }
@@ -69,7 +69,7 @@ trait HasCrudMethods
             return $entity->getRepository()->update($attrs, $id);
         } catch (\Exception $e) {
             throw new HttpResponseException(new Response(
-                "Record {$id} not updated", 500
+                "Record {$id} not updated: " . $e->getMessage(), 500
             ));
         }
     }
@@ -89,7 +89,7 @@ trait HasCrudMethods
             return $entity->getRepository()->delete($id);
         } catch (\Exception $e) {
             throw new HttpResponseException(new Response(
-                "Record {$id} not deleted", 500
+                "Record {$id} not deleted: " . $e->getMessage(), 500
             ));
         }
     }
