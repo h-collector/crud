@@ -246,5 +246,7 @@ class EloquentRepository extends BaseRepository
                 })
             );
         }
+
+        return $this;
     }
 }
