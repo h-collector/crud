@@ -7,8 +7,6 @@ use Illuminate\Support\Collection;
 use Illuminate\View\Factory as ViewFactory;
 use Illuminate\View\View;
 use InvalidArgumentException;
-use Psr\Container\ContainerExceptionInterface;
-use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
@@ -138,20 +136,15 @@ class CrudService
     /**
      * @param string $entity registered entity name
      *
-     * @throws NotFoundExceptionInterface  no entry was found for **this** identifier
-     * @throws ContainerExceptionInterface error while retrieving the entry
+     * @throws Exception error while retrieving the entry
      *
-     * @return Entity
+     * @return Entity|mixed
      */
     public function getEntity(string $entity): Entity
     {
-        try {
-            return $this->container->get(
-                $this->entities[$entity] ?? (in_array($entity, $this->entities) ? $entity : null)
-            );
-        } catch (NotFoundExceptionInterface $e) {
-            throw new NotFoundHttpException("Entity [{$entity}] not registered or found");
-        }
+        return $this->container->make(
+            $this->entities[$entity] ?? (in_array($entity, $this->entities) ? $entity : null)
+        );
     }
 
     /**
