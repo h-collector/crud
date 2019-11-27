@@ -242,7 +242,7 @@ class EloquentRepository extends BaseRepository
         if ($traits && in_array(FilterableTrait::class, $traits)) {
             $this->getQuery()->filtered(
                 array_filter($request->all(), function ($val) {
-                    return '' !== $val;
+                    return null !== $val;
                 })
             );
         }

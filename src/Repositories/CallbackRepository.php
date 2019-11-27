@@ -172,7 +172,9 @@ class CallbackRepository extends BaseRepository
         $data = $request->except([$this->primaryKey, 'page', 'size']);
 
         foreach ($data as $key => $value) {
-            $this->where($key, '=', $value);
+            if (null !== $value) {
+                $this->where($key, '=', $value);
+            }
         }
 
         return $this;
