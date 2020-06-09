@@ -323,6 +323,11 @@ abstract class Entity implements Arrayable, JsonSerializable
             $rules[$id] = 'required';
         }
 
+        // remove disabled fields by default
+        foreach ($this->getFields()->getDisabled() as $id) {
+            unset($rules[$id]);
+        }
+
         return $rules;
     }
 
@@ -338,9 +343,7 @@ abstract class Entity implements Arrayable, JsonSerializable
      */
     public function validateRequest(Request $request, $id = 0): array
     {
-        $data = $request->validate($this->rules()) ?: $request->all();
-
-        return Arr::only($data, $this->getFields()->getIds());
+        return $request->validate($this->rules());
     }
 
     /**

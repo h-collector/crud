@@ -28,6 +28,22 @@ class Collection extends BaseCollection
     /**
      * @return array
      */
+    public function getDisabled(): array
+    {
+        return $this->where('$el.disabled')->pluck('$id')->toArray();
+    }
+
+    /**
+     * @return array
+     */
+    public function getReadonly(): array
+    {
+        return $this->where('$el.readonly')->pluck('$id')->toArray();
+    }
+
+    /**
+     * @return array
+     */
     public function getRequired(): array
     {
         return $this->where('rules.*.required', true)->pluck('$id')->toArray();
