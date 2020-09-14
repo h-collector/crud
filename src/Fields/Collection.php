@@ -46,7 +46,15 @@ class Collection extends BaseCollection
      */
     public function getRequired(): array
     {
-        return $this->where('rules.*.required', true)->pluck('$id')->toArray();
+        $filter = function (Field $field) {
+            foreach ($field->getRules() as $rule) {
+                if (! empty($rule['required'])) {
+                    return true;
+                }
+            }
+        };
+
+        return $this->filter($filter)->pluck('$id')->toArray();
     }
 
     /**
